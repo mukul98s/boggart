@@ -32,6 +32,7 @@ codebase remains compatible.`,
 }
 
 func Execute() {
+	rootCmd.CompletionOptions.HiddenDefaultCmd = true
 	err := rootCmd.Execute()
 	if err != nil {
 		os.Exit(1)

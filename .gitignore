@@ -17,3 +17,5 @@ yarn-error.log
 .styleci.yml
 main
 boggart
+build/*
+.phpversion
