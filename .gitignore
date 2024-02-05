@@ -19,3 +19,5 @@ main
 boggart
 build/*
 .phpversion
+php-*
+./php-*

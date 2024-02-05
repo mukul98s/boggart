@@ -2,10 +2,11 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/mukul98s/boggart/helper"
-	"github.com/spf13/cobra"
 	"os"
 	"os/exec"
+
+	"github.com/mukul98s/boggart/helper"
+	"github.com/spf13/cobra"
 )
 
 // useCmd represents the use command
@@ -46,6 +47,10 @@ func runUseCommand(cmd *cobra.Command, args []string) {
 	output, err := command.Output()
 	if err != nil || string(output) == "" {
 		fmt.Printf("PHP v%s is not installed on your system\n", phpVersionNumber)
+		_, err := helper.InstallPhp(phpVersionNumber)
+		if err != nil {
+			fmt.Println(err)
+		}
 		return
 	}
 
